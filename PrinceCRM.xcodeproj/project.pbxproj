@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270729721F5057C90027A67E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270729711F5057C90027A67E /* LoginViewController.swift */; };
 		272D585F1F504DF30028F9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D585E1F504DF30028F9B9 /* AppDelegate.swift */; };
-		272D58611F504DF30028F9B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D58601F504DF30028F9B9 /* ViewController.swift */; };
 		272D58641F504DF30028F9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D58621F504DF30028F9B9 /* Main.storyboard */; };
 		272D58661F504DF30028F9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272D58651F504DF30028F9B9 /* Assets.xcassets */; };
 		272D58691F504DF30028F9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D58671F504DF30028F9B9 /* LaunchScreen.storyboard */; };
+		2766E5051F51825900742728 /* localhost.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2766E5041F51825900742728 /* localhost.cer */; };
+		279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */; };
+		279B86EA1F52BF3900E51E7E /* member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86E91F52BF3900E51E7E /* member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270729711F5057C90027A67E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		272D585B1F504DF30028F9B9 /* PrinceCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinceCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272D585E1F504DF30028F9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		272D58601F504DF30028F9B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		272D58631F504DF30028F9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272D58651F504DF30028F9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272D58681F504DF30028F9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272D586A1F504DF30028F9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2766E5041F51825900742728 /* localhost.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = localhost.cer; sourceTree = "<group>"; };
+		279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
+		279B86E91F52BF3900E51E7E /* member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = member.swift; sourceTree = "<group>"; };
+		27E543731F5304F0008E4CFF /* PrinceCRMV102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV102.png; sourceTree = "<group>"; };
+		27E543741F5304F0008E4CFF /* PrinceCRMV103.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV103.png; sourceTree = "<group>"; };
+		27E543751F5304F1008E4CFF /* PrinceCRMV101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV101.png; sourceTree = "<group>"; };
+		27E543761F5305FA008E4CFF /* member.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = member.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +48,7 @@
 		272D58521F504DF30028F9B9 = {
 			isa = PBXGroup;
 			children = (
+				2766E5041F51825900742728 /* localhost.cer */,
 				272D585D1F504DF30028F9B9 /* PrinceCRM */,
 				272D585C1F504DF30028F9B9 /* Products */,
 			);
@@ -54,14 +65,36 @@
 		272D585D1F504DF30028F9B9 /* PrinceCRM */ = {
 			isa = PBXGroup;
 			children = (
+				27E543721F52C2F3008E4CFF /* Other */,
+				279B86E81F52BF1500E51E7E /* Models */,
+				270729711F5057C90027A67E /* LoginViewController.swift */,
 				272D585E1F504DF30028F9B9 /* AppDelegate.swift */,
-				272D58601F504DF30028F9B9 /* ViewController.swift */,
 				272D58621F504DF30028F9B9 /* Main.storyboard */,
+				279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */,
 				272D58651F504DF30028F9B9 /* Assets.xcassets */,
 				272D58671F504DF30028F9B9 /* LaunchScreen.storyboard */,
 				272D586A1F504DF30028F9B9 /* Info.plist */,
 			);
 			path = PrinceCRM;
+			sourceTree = "<group>";
+		};
+		279B86E81F52BF1500E51E7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				279B86E91F52BF3900E51E7E /* member.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27E543721F52C2F3008E4CFF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				27E543761F5305FA008E4CFF /* member.sql */,
+				27E543751F5304F1008E4CFF /* PrinceCRMV101.png */,
+				27E543731F5304F0008E4CFF /* PrinceCRMV102.png */,
+				27E543741F5304F0008E4CFF /* PrinceCRMV103.png */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2766E5051F51825900742728 /* localhost.cer in Resources */,
 				272D58691F504DF30028F9B9 /* LaunchScreen.storyboard in Resources */,
 				272D58661F504DF30028F9B9 /* Assets.xcassets in Resources */,
 				272D58641F504DF30028F9B9 /* Main.storyboard in Resources */,
@@ -135,8 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272D58611F504DF30028F9B9 /* ViewController.swift in Sources */,
+				270729721F5057C90027A67E /* LoginViewController.swift in Sources */,
 				272D585F1F504DF30028F9B9 /* AppDelegate.swift in Sources */,
+				279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */,
+				279B86EA1F52BF3900E51E7E /* member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +311,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 74M49B6F62;
 				INFOPLIST_FILE = PrinceCRM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.PrinceCRM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -289,11 +326,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 74M49B6F62;
 				INFOPLIST_FILE = PrinceCRM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.PrinceCRM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
