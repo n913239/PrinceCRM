@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     var loginData = member()
     struct PropertyKeys {
         static let first = "First"
+        static let tabbar = "TabBar"
     }
     
     // 彈出警告視窗
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBAction func signinButton(_ sender: UIButton) {
 
-        let url = URL(string: "http://localhost:5000/api/Values")
+        let url = URL(string: "http://localhost:5000/api/Member")
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -44,11 +45,11 @@ class LoginViewController: UIViewController {
                     self.loginData.token = token
                     
                     // 轉場到下一個畫面
-                    if let firstController = self.storyboard?.instantiateViewController(withIdentifier: PropertyKeys.first) as? FirstTableViewController {
+                    if let firstController = self.storyboard?.instantiateViewController(withIdentifier: PropertyKeys.first) as? FirstTableViewController, let tabController = self.storyboard?.instantiateViewController(withIdentifier: PropertyKeys.tabbar) as? UITabBarController {
                         firstController.user = self.loginData
                         // 呼叫 main thread 來轉換場景
                         DispatchQueue.main.async(execute: {
-                            self.present(firstController, animated: true, completion: nil)
+                            self.present(tabController, animated: true, completion: nil)
                         })
                     }
                 } else {
