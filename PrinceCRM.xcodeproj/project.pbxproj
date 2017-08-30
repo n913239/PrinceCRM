@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		270729721F5057C90027A67E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270729711F5057C90027A67E /* LoginViewController.swift */; };
+		2711EB7A1F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711EB791F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift */; };
 		272D585F1F504DF30028F9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D585E1F504DF30028F9B9 /* AppDelegate.swift */; };
 		272D58641F504DF30028F9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D58621F504DF30028F9B9 /* Main.storyboard */; };
 		272D58661F504DF30028F9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272D58651F504DF30028F9B9 /* Assets.xcassets */; };
 		272D58691F504DF30028F9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D58671F504DF30028F9B9 /* LaunchScreen.storyboard */; };
+		27452C531F565DC70004754A /* CompanyDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */; };
 		2766E5051F51825900742728 /* localhost.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2766E5041F51825900742728 /* localhost.cer */; };
-		277918111F558EF300C4F2BD /* company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277918101F558EF300C4F2BD /* company.swift */; };
+		277918111F558EF300C4F2BD /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277918101F558EF300C4F2BD /* Company.swift */; };
+		277918381F559FDD00C4F2BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277918371F559FDC00C4F2BD /* CoreData.framework */; };
 		279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */; };
 		279B86EA1F52BF3900E51E7E /* member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86E91F52BF3900E51E7E /* member.swift */; };
 		27E5437A1F53B0B5008E4CFF /* CompanyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E543791F53B0B5008E4CFF /* CompanyTableViewController.swift */; };
@@ -21,14 +24,20 @@
 
 /* Begin PBXFileReference section */
 		270729711F5057C90027A67E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2711EB791F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		272D585B1F504DF30028F9B9 /* PrinceCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinceCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272D585E1F504DF30028F9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		272D58631F504DF30028F9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272D58651F504DF30028F9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272D58681F504DF30028F9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272D586A1F504DF30028F9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		273827FC1F572AAE00399BCD /* PrinceCRMV202.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV202.png; sourceTree = "<group>"; };
+		273827FD1F572AB000399BCD /* PrinceCRMV201.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV201.png; sourceTree = "<group>"; };
+		273827FE1F572AB100399BCD /* PrinceCRMV203.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV203.png; sourceTree = "<group>"; };
+		27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsTableViewController.swift; sourceTree = "<group>"; };
 		2766E5041F51825900742728 /* localhost.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = localhost.cer; sourceTree = "<group>"; };
-		277918101F558EF300C4F2BD /* company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = company.swift; sourceTree = "<group>"; };
+		277918101F558EF300C4F2BD /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		277918371F559FDC00C4F2BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
 		279B86E91F52BF3900E51E7E /* member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = member.swift; sourceTree = "<group>"; };
 		27E543731F5304F0008E4CFF /* PrinceCRMV102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV102.png; sourceTree = "<group>"; };
@@ -43,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277918381F559FDD00C4F2BD /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +65,7 @@
 				2766E5041F51825900742728 /* localhost.cer */,
 				272D585D1F504DF30028F9B9 /* PrinceCRM */,
 				272D585C1F504DF30028F9B9 /* Products */,
+				277918361F559FDC00C4F2BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +92,19 @@
 			path = PrinceCRM;
 			sourceTree = "<group>";
 		};
+		277918361F559FDC00C4F2BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				277918371F559FDC00C4F2BD /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		279B86E81F52BF1500E51E7E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				279B86E91F52BF3900E51E7E /* member.swift */,
-				277918101F558EF300C4F2BD /* company.swift */,
+				277918101F558EF300C4F2BD /* Company.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,6 +114,9 @@
 			children = (
 				27E543761F5305FA008E4CFF /* member.sql */,
 				27E543751F5304F1008E4CFF /* PrinceCRMV101.png */,
+				273827FD1F572AB000399BCD /* PrinceCRMV201.png */,
+				273827FC1F572AAE00399BCD /* PrinceCRMV202.png */,
+				273827FE1F572AB100399BCD /* PrinceCRMV203.png */,
 				27E543731F5304F0008E4CFF /* PrinceCRMV102.png */,
 				27E543741F5304F0008E4CFF /* PrinceCRMV103.png */,
 			);
@@ -107,6 +129,8 @@
 				270729711F5057C90027A67E /* LoginViewController.swift */,
 				279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */,
 				27E543791F53B0B5008E4CFF /* CompanyTableViewController.swift */,
+				27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */,
+				2711EB791F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,9 +210,11 @@
 				270729721F5057C90027A67E /* LoginViewController.swift in Sources */,
 				272D585F1F504DF30028F9B9 /* AppDelegate.swift in Sources */,
 				279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */,
-				277918111F558EF300C4F2BD /* company.swift in Sources */,
+				277918111F558EF300C4F2BD /* Company.swift in Sources */,
+				2711EB7A1F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift in Sources */,
 				27E5437A1F53B0B5008E4CFF /* CompanyTableViewController.swift in Sources */,
 				279B86EA1F52BF3900E51E7E /* member.swift in Sources */,
+				27452C531F565DC70004754A /* CompanyDetailsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

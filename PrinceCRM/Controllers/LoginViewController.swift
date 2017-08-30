@@ -47,6 +47,12 @@ class LoginViewController: UIViewController {
                     // 轉場到下一個畫面
                     if let firstController = self.storyboard?.instantiateViewController(withIdentifier: PropertyKeys.first) as? FirstTableViewController, let tabController = self.storyboard?.instantiateViewController(withIdentifier: PropertyKeys.tabbar) as? UITabBarController {
                         firstController.user = self.loginData
+                        // 將數值存入UserDefaults
+                        let userDefault = UserDefaults.standard
+                        userDefault.set(self.loginData.username, forKey: "user")
+                        userDefault.set(self.loginData.token, forKey: "token")
+                        userDefault.synchronize()
+                        
                         // 呼叫 main thread 來轉換場景
                         DispatchQueue.main.async(execute: {
                             self.present(tabController, animated: true, completion: nil)

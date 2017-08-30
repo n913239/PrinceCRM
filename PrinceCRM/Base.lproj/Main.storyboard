@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -27,14 +32,14 @@
                                     <constraint firstAttribute="height" constant="175" id="Y6K-gU-GQq"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDQ-iT-p97">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="mike" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDQ-iT-p97">
                                 <rect key="frame" x="84" y="427" width="295" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-Qr-o6Z">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-Qr-o6Z">
                                 <rect key="frame" x="84" y="484" width="295" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -134,22 +139,35 @@
             </objects>
             <point key="canvasLocation" x="422" y="-594"/>
         </scene>
-        <!--PrinceCRM-->
+        <!--Company-->
         <scene sceneID="sdW-GS-cbX">
             <objects>
-                <tableViewController id="j26-bV-H4w" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lY1-pz-ccm">
+                <tableViewController id="j26-bV-H4w" customClass="CompanyTableViewController" customModule="PrinceCRM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lY1-pz-ccm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QXa-bO-jS1">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="RNC-L3-AKL" style="IBUITableViewCellStyleDefault" id="QXa-bO-jS1">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QXa-bO-jS1" id="6gL-ba-SmA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RNC-L3-AKL">
+                                            <rect key="frame" x="20" y="0.0" width="359" height="99.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4Et-vN-zv5" kind="show" identifier="companyDetails" id="q85-pe-94Q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -157,11 +175,120 @@
                             <outlet property="delegate" destination="j26-bV-H4w" id="ojF-i2-X1s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="PrinceCRM" id="dPN-o0-vrb"/>
+                    <navigationItem key="navigationItem" title="Company" id="dPN-o0-vrb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5n-Zu-VSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="158"/>
+            <point key="canvasLocation" x="1303" y="156"/>
+        </scene>
+        <!--Company Details-->
+        <scene sceneID="Kjl-KY-paO">
+            <objects>
+                <tableViewController id="4Et-vN-zv5" customClass="CompanyDetailsTableViewController" customModule="PrinceCRM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GQG-W3-16r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellShort" rowHeight="-1" id="5Ri-HV-UPo" customClass="CompanyDetailsTableViewCell" customModule="PrinceCRM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Ri-HV-UPo" id="2Kc-nS-yXf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Adh-XC-EW8">
+                                            <rect key="frame" x="37" y="10" width="340" height="24"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAQ-tQ-8EK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="B6e-Gk-wPF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567890" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V01-ga-9PL">
+                                                    <rect key="frame" x="140" y="0.0" width="200" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="SXW-Sg-jIr"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Adh-XC-EW8" firstAttribute="centerX" secondItem="2Kc-nS-yXf" secondAttribute="centerX" id="h7j-rx-1BJ"/>
+                                        <constraint firstItem="Adh-XC-EW8" firstAttribute="centerY" secondItem="2Kc-nS-yXf" secondAttribute="centerY" id="p4v-HL-fTN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="shortLabel" destination="gAQ-tQ-8EK" id="eeW-N3-oDY"/>
+                                    <outlet property="shortTextField" destination="V01-ga-9PL" id="fln-RQ-uDY"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLong" rowHeight="180" id="ASS-M7-BHB" customClass="CompanyDetailsTableViewCell" customModule="PrinceCRM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ASS-M7-BHB" id="9bt-LQ-5xG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="179.66666666666666"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Jt9-UY-sQr">
+                                            <rect key="frame" x="37" y="60" width="340" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公司名稱" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojv-Te-MMj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="s8S-nT-1XY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="台北市敦化南路二段216號9樓" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TMf-bz-GUE">
+                                                    <rect key="frame" x="140" y="0.0" width="200" height="60"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="HMq-Xp-c7x"/>
+                                                        <constraint firstAttribute="width" constant="200" id="NAa-MT-Zni"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TMf-bz-GUE" firstAttribute="centerY" secondItem="Jt9-UY-sQr" secondAttribute="centerY" id="qpX-95-wPR"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Jt9-UY-sQr" firstAttribute="centerY" secondItem="9bt-LQ-5xG" secondAttribute="centerY" id="lYE-sS-4Mc"/>
+                                        <constraint firstItem="Jt9-UY-sQr" firstAttribute="centerX" secondItem="9bt-LQ-5xG" secondAttribute="centerX" id="ym2-RH-BHx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="longLabel" destination="ojv-Te-MMj" id="ZXY-Fe-GFK"/>
+                                    <outlet property="longTextView" destination="TMf-bz-GUE" id="79d-iz-LTS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="4Et-vN-zv5" id="H1i-Ob-dRY"/>
+                            <outlet property="delegate" destination="4Et-vN-zv5" id="1jl-CB-B71"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Company Details" id="yJo-Wa-4bA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQm-sB-akw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2074" y="156"/>
         </scene>
         <!--PrinceCRM-->
         <scene sceneID="1yQ-at-njo">
@@ -215,7 +342,7 @@
         <scene sceneID="ERU-Ne-7y2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T1f-6W-9f3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Company" id="Bpr-Vb-zT0"/>
+                    <tabBarItem key="tabBarItem" title="Company" image="crown" id="Bpr-Vb-zT0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5ud-iP-Ae7">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -233,6 +360,7 @@
     </scenes>
     <resources>
         <image name="bg" width="750" height="1334"/>
+        <image name="crown" width="30" height="30"/>
         <image name="firstbg" width="375" height="667"/>
         <image name="sign in" width="652" height="350"/>
     </resources>

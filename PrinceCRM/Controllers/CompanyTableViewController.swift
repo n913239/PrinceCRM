@@ -10,11 +10,62 @@ import UIKit
 
 class CompanyTableViewController: UITableViewController {
 
-    var compayns:[company] = [company]()
+    var companys:[Company] = [Company]()
+    func loadCompanys() {
+        // 首先取得UserDefaults的會員資料
+        let userDefault = UserDefaults.standard
+        let user =  userDefault.string(forKey: "user")!
+        let token = userDefault.string(forKey: "token")!
+        
+        
+        let url = URL(string: "http://localhost:5000/api/Company/GetCompanyAll")
+        var urlRequest = URLRequest(url: url!)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let dictionary = ["username": user, "token": token]
+        
+        do {
+            let data = try  JSONSerialization.data(withJSONObject: dictionary, options: [])
+            
+            let task = URLSession.shared.uploadTask(with: urlRequest, from: data, completionHandler: { (retData, res, error) in
+                if let returnData = retData, let arr = (try? JSONSerialization.jsonObject(with: returnData)) as? NSArray, let dics = arr as? [[String:Any]] {
+                    
+                    for c in dics {
+                        let company = Company(id: c["id"]! as! Int, CompanyName: c["companyname"]! as! String, Address: c["address"]! as! String, Tel: c["tel"]! as! String, Fax: c["fax"]! as! String, Email: c["email"]! as! String, Website: c["website"]! as! String, EmployeesNumber: c["employeesnumber"]! as! Int)
+                        self.companys.append(company)
+                    }
+                    // 更新UI
+                    self.updateUI()
+                } else {
+                    DispatchQueue.main.async(execute: {
+                        self.showAlert(withTitle: "Warning", andMessage: "username or password incorrect", choiceMode: UIAlertControllerStyle.alert)
+                    })
+                }
+            })
+            task.resume()
+        }
+        catch { }
+    }
+    
+    // 彈出警告視窗
+    func showAlert(withTitle title:String, andMessage message:String, choiceMode  mode:UIAlertControllerStyle) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: mode)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // 更新UI
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        loadCompanys()
+        print("load")
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,18 +82,19 @@ class CompanyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return companys.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = "\(indexPath.row + 1 ). \(companys[indexPath.row].companyname)"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -79,14 +131,17 @@ class CompanyTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let companyDetails = segue.destination as? CompanyDetailsTableViewController, let indexPath = tableView.indexPathForSelectedRow {
+            companyDetails.company = companys[indexPath.row]
+        }
+        
     }
-    */
+    
 
 }

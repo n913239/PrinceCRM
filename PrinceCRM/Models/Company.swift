@@ -6,7 +6,7 @@
 //  Copyright © 2017年 mike. All rights reserved.
 //
 
-public class company
+public class Company
 {
     var id:Int
     var companyname:String
@@ -17,7 +17,7 @@ public class company
     var website:String
     var employeesnumber:Int
     
-    init(){
+    init() {
         id = 0
         companyname = ""
         address = ""
@@ -38,4 +38,30 @@ public class company
         self.website = Website
         self.employeesnumber = EmployeesNumber
     }
+    
+    // 取得索引
+    func getStringFromIndex(_ index: Int) -> (String, String) {
+        switch index {
+        case 0:
+            return ("編號", "\(id)")
+        case 1:
+            return ("名稱", companyname)
+        case 2:
+            return ("地址", address)
+        case 3:
+            return ("電話", tel)
+        case 4:
+            return ("傳真", fax)
+        case 5:
+            return ("電子郵件", email)
+        case 6:
+            return ("網站", website)
+        case 7:
+            return ("員工數", "\(employeesnumber)")
+        default:
+            return ("","")
+        }
+    }
+    
+    
 }
