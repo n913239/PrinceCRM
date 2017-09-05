@@ -10,6 +10,7 @@ import UIKit
 
 class CompanyDetailsTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var shortLabel: UILabel!
     @IBOutlet weak var shortTextField: UITextField!
     @IBOutlet weak var longLabel: UILabel!
@@ -26,4 +27,15 @@ class CompanyDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+extension CompanyDetailsTableViewCell {
+    func getTextFieldDic() -> (String, String) {
+        if let short = shortTextField {
+            return (short.restorationIdentifier!, short.text!)
+        }
+        if let long = longTextView {
+            return (long.restorationIdentifier!, long.text!)
+        }
+        return ("","")
+    }
 }

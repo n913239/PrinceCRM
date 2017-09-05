@@ -14,7 +14,6 @@
 		272D58661F504DF30028F9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272D58651F504DF30028F9B9 /* Assets.xcassets */; };
 		272D58691F504DF30028F9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D58671F504DF30028F9B9 /* LaunchScreen.storyboard */; };
 		27452C531F565DC70004754A /* CompanyDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */; };
-		2766E5051F51825900742728 /* localhost.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2766E5041F51825900742728 /* localhost.cer */; };
 		277918111F558EF300C4F2BD /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277918101F558EF300C4F2BD /* Company.swift */; };
 		277918381F559FDD00C4F2BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277918371F559FDC00C4F2BD /* CoreData.framework */; };
 		279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */; };
@@ -35,7 +34,6 @@
 		273827FD1F572AB000399BCD /* PrinceCRMV201.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV201.png; sourceTree = "<group>"; };
 		273827FE1F572AB100399BCD /* PrinceCRMV203.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV203.png; sourceTree = "<group>"; };
 		27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsTableViewController.swift; sourceTree = "<group>"; };
-		2766E5041F51825900742728 /* localhost.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = localhost.cer; sourceTree = "<group>"; };
 		277918101F558EF300C4F2BD /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		277918371F559FDC00C4F2BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 		272D58521F504DF30028F9B9 = {
 			isa = PBXGroup;
 			children = (
-				2766E5041F51825900742728 /* localhost.cer */,
 				272D585D1F504DF30028F9B9 /* PrinceCRM */,
 				272D585C1F504DF30028F9B9 /* Products */,
 				277918361F559FDC00C4F2BD /* Frameworks */,
@@ -193,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2766E5051F51825900742728 /* localhost.cer in Resources */,
 				272D58691F504DF30028F9B9 /* LaunchScreen.storyboard in Resources */,
 				272D58661F504DF30028F9B9 /* Assets.xcassets in Resources */,
 				272D58641F504DF30028F9B9 /* Main.storyboard in Resources */,

@@ -142,7 +142,7 @@
         <!--Company-->
         <scene sceneID="sdW-GS-cbX">
             <objects>
-                <tableViewController id="j26-bV-H4w" customClass="CompanyTableViewController" customModule="PrinceCRM" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CompanyList" id="j26-bV-H4w" customClass="CompanyTableViewController" customModule="PrinceCRM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lY1-pz-ccm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,7 +166,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="4Et-vN-zv5" kind="show" identifier="companyDetails" id="q85-pe-94Q"/>
+                                    <segue destination="4Et-vN-zv5" kind="push" identifier="editCompany" id="q85-pe-94Q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -175,9 +175,19 @@
                             <outlet property="delegate" destination="j26-bV-H4w" id="ojF-i2-X1s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Company" id="dPN-o0-vrb"/>
+                    <navigationItem key="navigationItem" title="Company" id="dPN-o0-vrb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fgn-gb-nb6">
+                            <connections>
+                                <segue destination="4Et-vN-zv5" kind="push" identifier="addCompany" id="6b2-wm-TMP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="VPx-s0-8eS" kind="unwind" identifier="BackToCompanyListSegue" unwindAction="returnCompanyListWithSender:" id="t9v-DG-nB4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5n-Zu-VSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VPx-s0-8eS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1303" y="156"/>
         </scene>
@@ -217,7 +227,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 </textField>
                                             </subviews>
                                         </stackView>
@@ -227,9 +237,11 @@
                                         <constraint firstItem="Adh-XC-EW8" firstAttribute="centerY" secondItem="2Kc-nS-yXf" secondAttribute="centerY" id="p4v-HL-fTN"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="shortLabel" destination="gAQ-tQ-8EK" id="eeW-N3-oDY"/>
                                     <outlet property="shortTextField" destination="V01-ga-9PL" id="fln-RQ-uDY"/>
+                                    <outletCollection property="gestureRecognizers" destination="itM-3y-Cwy" appends="YES" id="xeQ-a6-Ebx"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLong" rowHeight="180" id="ASS-M7-BHB" customClass="CompanyDetailsTableViewCell" customModule="PrinceCRM" customModuleProvider="target">
@@ -259,7 +271,7 @@
                                                         <constraint firstAttribute="width" constant="200" id="NAa-MT-Zni"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -272,9 +284,11 @@
                                         <constraint firstItem="Jt9-UY-sQr" firstAttribute="centerX" secondItem="9bt-LQ-5xG" secondAttribute="centerX" id="ym2-RH-BHx"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="longLabel" destination="ojv-Te-MMj" id="ZXY-Fe-GFK"/>
                                     <outlet property="longTextView" destination="TMf-bz-GUE" id="79d-iz-LTS"/>
+                                    <outletCollection property="gestureRecognizers" destination="hm2-rF-SIC" appends="YES" id="gnO-nZ-6Is"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -284,9 +298,25 @@
                             <outlet property="delegate" destination="4Et-vN-zv5" id="1jl-CB-B71"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Company Details" id="yJo-Wa-4bA"/>
+                    <navigationItem key="navigationItem" title="Company Details" id="yJo-Wa-4bA">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="4Y9-o6-FzQ">
+                            <connections>
+                                <action selector="saveButton:" destination="4Et-vN-zv5" id="CiL-TS-MWc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQm-sB-akw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hm2-rF-SIC">
+                    <connections>
+                        <action selector="viewTapped:" destination="4Et-vN-zv5" id="1iN-Es-DOt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="itM-3y-Cwy">
+                    <connections>
+                        <action selector="viewTapped:" destination="4Et-vN-zv5" id="kAP-a5-FEu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2074" y="156"/>
         </scene>
@@ -341,7 +371,7 @@
         <!--Company-->
         <scene sceneID="ERU-Ne-7y2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T1f-6W-9f3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="companyNavigationId" automaticallyAdjustsScrollViewInsets="NO" id="T1f-6W-9f3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Company" image="crown" id="Bpr-Vb-zT0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5ud-iP-Ae7">
@@ -364,4 +394,7 @@
         <image name="firstbg" width="375" height="667"/>
         <image name="sign in" width="652" height="350"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q85-pe-94Q"/>
+    </inferredMetricsTieBreakers>
 </document>
