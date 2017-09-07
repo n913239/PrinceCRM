@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -291,6 +292,77 @@
                                     <outletCollection property="gestureRecognizers" destination="hm2-rF-SIC" appends="YES" id="gnO-nZ-6Is"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLongMap" rowHeight="210" id="37w-Pf-8nT" customClass="CompanyDetailsTableViewCell" customModule="PrinceCRM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="252" width="414" height="210"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="37w-Pf-8nT" id="nJ7-C6-YCC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209.66666666666666"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Vfv-sx-tTK">
+                                            <rect key="frame" x="17" y="8" width="380" height="193.66666666666666"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny3-il-BTJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="193.66666666666666"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="2jO-oD-FMR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a16-1H-r5G">
+                                                    <rect key="frame" x="120" y="0.0" width="260" height="193.66666666666666"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="台北市敦化南路二段216號9樓" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="utJ-aX-1Pv">
+                                                            <rect key="frame" x="30" y="0.0" width="200" height="163.66666666666666"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Nns-X9-5Pe"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="xgz-Be-KC9"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
+                                                        </textView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lol-ch-nBE">
+                                                            <rect key="frame" x="100" y="163.66666666666666" width="60" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="4jr-gb-Ewk"/>
+                                                                <constraint firstAttribute="height" constant="30" id="yBJ-gF-e9X"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <state key="normal" title="Map"/>
+                                                            <connections>
+                                                                <segue destination="2aO-k8-hXf" kind="show" identifier="companyMap" id="FUm-8q-92q"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="utJ-aX-1Pv" firstAttribute="top" secondItem="a16-1H-r5G" secondAttribute="top" id="2bm-3Q-MUZ"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="Kb5-Vb-RH2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Lol-ch-nBE" secondAttribute="trailing" constant="100" id="M7F-J6-59X"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Lol-ch-nBE" secondAttribute="bottom" id="hRr-Ac-GSv"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a16-1H-r5G" firstAttribute="top" secondItem="Vfv-sx-tTK" secondAttribute="top" id="dtw-xn-yeC"/>
+                                                <constraint firstItem="Ny3-il-BTJ" firstAttribute="centerY" secondItem="Vfv-sx-tTK" secondAttribute="centerY" id="oZq-qI-uIw"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Vfv-sx-tTK" firstAttribute="top" secondItem="nJ7-C6-YCC" secondAttribute="topMargin" id="9Xw-6o-hsi"/>
+                                        <constraint firstItem="Vfv-sx-tTK" firstAttribute="centerX" secondItem="nJ7-C6-YCC" secondAttribute="centerX" id="BOK-Aw-SUx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Vfv-sx-tTK" secondAttribute="bottom" id="Gy8-og-ltg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="longLabel" destination="Ny3-il-BTJ" id="4cB-6c-cqH"/>
+                                    <outlet property="longTextView" destination="utJ-aX-1Pv" id="Zrs-Lp-QSD"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -319,6 +391,31 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2074" y="156"/>
+        </scene>
+        <!--CompanyMap-->
+        <scene sceneID="V3b-tq-nUm">
+            <objects>
+                <viewController id="2aO-k8-hXf" customClass="CompanyMapViewController" customModule="PrinceCRM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qzT-SS-suf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-rU-7y2">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="E89-El-JSH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CompanyMap" id="vnq-ry-akr"/>
+                    <connections>
+                        <outlet property="companyMapView" destination="EwX-rU-7y2" id="HaR-iy-XGQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdZ-p3-eeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2821.739130434783" y="156.52173913043478"/>
         </scene>
         <!--PrinceCRM-->
         <scene sceneID="1yQ-at-njo">

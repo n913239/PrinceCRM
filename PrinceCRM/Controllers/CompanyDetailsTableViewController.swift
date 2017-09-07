@@ -114,15 +114,21 @@ class CompanyDetailsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "companyMap" {
+            // 傳遞公司資料到地圖頁面
+            if let companyMap = segue.destination as? CompanyMapViewController {
+                companyMap.company = company
+            }
+        }
+        
     }
-    */
+    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.endEditing(true)
@@ -146,7 +152,7 @@ extension CompanyDetailsTableViewController: UITextFieldDelegate, UITextViewDele
 extension CompanyDetailsTableViewController {
     // 設定TableView的Cell資料
     func configure(_ indexPath:IndexPath) -> UITableViewCell {
-        if indexPath.row == 1 || indexPath.row == 2 {
+        if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellLong", for: indexPath) as! CompanyDetailsTableViewCell
             guard let label = cell.longLabel else { return cell }
             guard let textField = cell.longTextView else { return cell }
@@ -160,6 +166,21 @@ extension CompanyDetailsTableViewController {
             textField.keyboardType = company.getKeyboardTypeFromIndex(indexPath.row)
             
             return cell as UITableViewCell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellLongMap", for: indexPath) as! CompanyDetailsTableViewCell
+            guard let label = cell.longLabel else { return cell }
+            guard let textField = cell.longTextView else { return cell }
+            
+            label.text = company.getStringFromIndex(indexPath.row).0
+            textField.text = company.getStringFromIndex(indexPath.row).1
+            textField.delegate = self
+            textField.restorationIdentifier = "text\(indexPath.row)"
+            
+            // 設定鍵盤類型
+            textField.keyboardType = company.getKeyboardTypeFromIndex(indexPath.row)
+            
+            return cell as UITableViewCell
+
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellShort", for: indexPath) as! CompanyDetailsTableViewCell
             guard let label = cell.shortLabel else { return cell }

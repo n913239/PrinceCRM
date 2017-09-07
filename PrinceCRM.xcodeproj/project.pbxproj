@@ -14,6 +14,7 @@
 		272D58661F504DF30028F9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272D58651F504DF30028F9B9 /* Assets.xcassets */; };
 		272D58691F504DF30028F9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D58671F504DF30028F9B9 /* LaunchScreen.storyboard */; };
 		27452C531F565DC70004754A /* CompanyDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */; };
+		275EACAB1F60415E0055E165 /* CompanyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EACAA1F60415E0055E165 /* CompanyMapViewController.swift */; };
 		277918111F558EF300C4F2BD /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277918101F558EF300C4F2BD /* Company.swift */; };
 		277918381F559FDD00C4F2BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277918371F559FDC00C4F2BD /* CoreData.framework */; };
 		279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */; };
@@ -34,6 +35,7 @@
 		273827FD1F572AB000399BCD /* PrinceCRMV201.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV201.png; sourceTree = "<group>"; };
 		273827FE1F572AB100399BCD /* PrinceCRMV203.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV203.png; sourceTree = "<group>"; };
 		27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsTableViewController.swift; sourceTree = "<group>"; };
+		275EACAA1F60415E0055E165 /* CompanyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMapViewController.swift; sourceTree = "<group>"; };
 		277918101F558EF300C4F2BD /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		277918371F559FDC00C4F2BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		279B86E61F52BECC00E51E7E /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,9 @@
 		27E543751F5304F1008E4CFF /* PrinceCRMV101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV101.png; sourceTree = "<group>"; };
 		27E543761F5305FA008E4CFF /* member.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = member.sql; sourceTree = "<group>"; };
 		27E543791F53B0B5008E4CFF /* CompanyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewController.swift; sourceTree = "<group>"; };
+		27FDC6BB1F611623004741B0 /* PrinceCRMV403.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV403.png; sourceTree = "<group>"; };
+		27FDC6BC1F611624004741B0 /* PrinceCRMV401.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV401.png; sourceTree = "<group>"; };
+		27FDC6BD1F611625004741B0 /* PrinceCRMV402.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrinceCRMV402.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,9 @@
 				273827FE1F572AB100399BCD /* PrinceCRMV203.png */,
 				27E543731F5304F0008E4CFF /* PrinceCRMV102.png */,
 				27E543741F5304F0008E4CFF /* PrinceCRMV103.png */,
+				27FDC6BC1F611624004741B0 /* PrinceCRMV401.png */,
+				27FDC6BD1F611625004741B0 /* PrinceCRMV402.png */,
+				27FDC6BB1F611623004741B0 /* PrinceCRMV403.png */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 				27E543791F53B0B5008E4CFF /* CompanyTableViewController.swift */,
 				27452C521F565DC70004754A /* CompanyDetailsTableViewController.swift */,
 				2711EB791F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift */,
+				275EACAA1F60415E0055E165 /* CompanyMapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 				279B86E71F52BECC00E51E7E /* FirstTableViewController.swift in Sources */,
 				277918111F558EF300C4F2BD /* Company.swift in Sources */,
 				2711EB7A1F56EEA3004C2E72 /* CompanyDetailsTableViewCell.swift in Sources */,
+				275EACAB1F60415E0055E165 /* CompanyMapViewController.swift in Sources */,
 				27E5437A1F53B0B5008E4CFF /* CompanyTableViewController.swift in Sources */,
 				279B86EA1F52BF3900E51E7E /* member.swift in Sources */,
 				27452C531F565DC70004754A /* CompanyDetailsTableViewController.swift in Sources */,
