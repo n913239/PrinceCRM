@@ -33,3 +33,21 @@ DB的建立script可以參考，Other內的company.sql
 
 
 ![](https://github.com/n913239/PrinceCRM/blob/master/PrinceCRM/Other/PrinceCRMV203.png)
+
+
+
+# PrinceCRM V3
+
+目前實作了company資料的CRUD
+
+
+完成圖：
+
+
+![](https://github.com/n913239/PrinceCRM/blob/v3/PrinceCRM/Other/PrinceCRMV301.png)
+
+
+![](https://github.com/n913239/PrinceCRM/blob/v3/PrinceCRM/Other/PrinceCRMV302.png)
+
+
+![](https://github.com/n913239/PrinceCRM/blob/v3/PrinceCRM/Other/PrinceCRMV303.png)
